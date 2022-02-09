@@ -28,7 +28,7 @@ const ImagePost = ({
             alt={altText || ''}
             srcSet={srcSet}
             sizes={sizes}
-            priority={true}
+            priority="true"
             loading="eager"
           />
         ) : (

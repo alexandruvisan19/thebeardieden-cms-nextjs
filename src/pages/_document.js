@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
     return this.props.helmet.bodyAttributes.toComponent();
   }
 
-  //should render on <head>
+  // should render on <head>
   get helmetHeadComponents() {
     return Object.keys(this.props.helmet)
       .filter((el) => el !== 'htmlAttributes' && el !== 'bodyAttributes')
@@ -33,8 +33,7 @@ export default class MyDocument extends Document {
       <Html {...this.helmetHtmlAttrComponents}>
         <Head>
           {this.helmetHeadComponents}
-          <meta name="google-site-verification" content="nORtJ6uLhELgz362shGti4JHTKKpQ5bT0M8Er81oHcc" />
-          <meta name="theme-color" content="#ffa416" />
+          <meta name="theme-color" content="#4eb72f" />
         </Head>
         <body {...this.helmetBodyAttrComponents}>
           <Main />

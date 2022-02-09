@@ -1,51 +1,19 @@
 @import "styles/settings/__settings";
+@import "styles/settings/_typography";
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
+// STYLE.CSS
+html {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto,
-    "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium",
-    "century gothic", cantarell, oxygen, ubuntu, sans-serif;
-}
-
-@keyframes fill {
-  to {
-    fill: #fcb33f;
-  }
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: $color-gray-200;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $color-gray-800;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-// STYLE.CSS
-/*! style.css v1.0.0 | ISC License | https://github.com/ungoldman/style.css */
-html {
-  color: #303030;
+  font-family: $font-family-default;
+  color: #2c2b27;
   background-color: white;
   box-sizing: border-box;
-  font-size: calc(14px + 0.25vw);
+  font-size: calc(16px + 0.25vw);
   line-height: 1.55;
   -webkit-font-kerning: normal;
   font-kerning: normal;
@@ -72,6 +40,10 @@ main {
   display: block;
 }
 
+figcaption {
+  text-align: center;
+}
+
 *,
 *::before,
 *::after {
@@ -85,6 +57,7 @@ ol,
 dl,
 table,
 pre {
+  font-family: $font-family-paragraphs;
   margin-top: 0;
   margin-bottom: 1.25em;
 }
@@ -99,7 +72,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
+  font-family: $font-family-headers;
+  font-weight: 800;
   line-height: 1.2em;
   margin-bottom: 1.25rem;
   margin-top: 2rem;
@@ -131,24 +105,28 @@ h1 {
 }
 
 h2 {
-  font-size: 2.15rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 1.75rem;
+  font-weight: 700;
 }
 
 h4 {
   font-size: 1.5rem;
+  font-weight: 700;
 }
 
 h5 {
   font-size: 1.25rem;
+  font-weight: 700;
 }
 
 h6 {
   font-size: 1.15em;
-  color: #575757;
+  font-weight: 700;
 }
 
 p {
@@ -326,6 +304,7 @@ table {
   overflow: auto;
   word-break: normal;
   word-break: keep-all;
+  border: 3px solid $color-secondary-light2;
 }
 
 table th,
@@ -339,12 +318,11 @@ table th {
 }
 
 table tr {
-  background-color: #fff;
   border-top: 1px solid #ccc;
 }
 
 table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: $color-black-050;
 }
 
 hr {
@@ -543,10 +521,6 @@ summary {
   display: list-item;
 }
 
-canvas {
-  display: inline-block;
-}
-
 template {
   display: none;
 }
@@ -562,11 +536,15 @@ template {
   height: 23px;
   right: 24px;
   top: 24px;
+
+  @media screen and (max-width: 980px) {
+    top: 20px;
+  }
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #0b1321;
+  background: #2c2b27;
   height: 13% !important;
 }
 
@@ -578,7 +556,7 @@ template {
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
   right: 26px !important;
-  top: 17px !important;
+  top: 12px !important;
   width: 32px !important;
   height: 32px !important;
 
@@ -590,7 +568,7 @@ template {
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #0b1321;
+  background: #2c2b27;
   height: 3px !important;
   width: 32px !important;
 }
@@ -607,7 +585,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
   background: $color-main-background;
-  padding: 3.5em 1.5em 0;
+  padding: 2em 1.5em 0;
   font-size: 1.15em;
   overflow: unset !important;
 }
@@ -620,7 +598,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
 }
 
 /* Individual item */
@@ -630,7 +607,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 
 p {
@@ -660,12 +637,12 @@ input {
 }
 
 table {
-  border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  border-radius: 15px;
 }
 
 table caption {
@@ -673,71 +650,32 @@ table caption {
   margin: 0.5em 0 0.75em;
 }
 
+table thead {
+  background-color: $color-secondary-light2;
+}
+
 table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
   padding: 0.35em;
+  border-top: none;
 }
 
 table th,
 table td {
+  border: none;
   padding: 0.625em;
   text-align: center;
+  font-size: 0.85em;
 }
 
 table th {
-  font-size: 0.85em;
+  font-size: 0.95em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
-  }
-
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: 0.625em;
-  }
-
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 0.8em;
-    text-align: right;
-  }
-
-  table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  table td:last-child {
-    border-bottom: 0;
-  }
+table p {
+  margin: 5px;
+  line-height: 1.4;
 }
 
 iframe {

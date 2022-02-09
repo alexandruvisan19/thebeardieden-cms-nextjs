@@ -2,15 +2,19 @@
 
 .nav {
   width: 100%;
-  background-color: #fffcf8;
-  height: 65px;
+  background-color: $color-main-background;
+  height: 55px;
   position: sticky;
   top: 0;
   z-index: 100;
+
+  @media screen and (max-width: 980px) {
+    height: 55px;
+  }
 }
 
 .progressMainWrapper {
-  background-color: #fff2dd;
+  background-color: #ffe9cc;
   position: sticky;
   top: 0;
   left: 0;
@@ -20,7 +24,7 @@
 
 .progressMainStyle {
   height: 4px;
-  background: linear-gradient(120deg, #96c6ff 0%, #4398ff 90%);
+  background: linear-gradient(120deg, $color-primary-light1 0%, $color-primary-light3 90%);
   transition: all 0.33s ease-out;
 }
 
@@ -29,12 +33,13 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
-  max-width: 70rem;
-  padding: 0 10px;
+  max-width: 65em;
   margin: 0 auto;
+  padding: 0 1em;
+
+  @media screen and (max-width: 980px) {
+    padding: 0 10px;
+  }
 }
 
 .navName {
@@ -54,8 +59,6 @@
 }
 
 .navSearchHidden {
-  flex-grow: 0;
-  margin-left: 0.5em;
   form {
     display: flex;
     align-items: center;
@@ -65,15 +68,15 @@
     height: 100%;
     padding: 0.5rem;
 
-    @media (min-width: 480px) {
-      justify-content: flex-end;
-      margin-right: -1rem;
+    @media (max-width: 980px) {
+      padding: 0;
     }
   }
 
   input {
-    font-size: 0.845em;
-    border: 2px solid $color-black-050;
+    border-radius: 8px;
+    border: 2px solid $border-gray-100;
+    margin: 20px 0 15px 0;
   }
 
   button {
@@ -107,6 +110,7 @@
 .navSearchVisible {
   flex-grow: 0;
   margin-left: 0.5em;
+  margin-left: 1.5rem;
   form {
     display: flex;
     align-items: center;
@@ -124,7 +128,9 @@
 
   input {
     font-size: 0.845em;
-    border-color: $color-gray-200;
+    outline: none;
+    border: 2px solid $color-primary;
+    border-radius: 8px;
   }
 
   button {
@@ -163,7 +169,7 @@
   background-color: white;
   padding: 1.5em;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  border-top: solid 5px $color-primary;
+  border-top: solid 5px $color-secondary;
   z-index: 999;
 
   @media (max-width: 980px) {
@@ -220,26 +226,37 @@
   padding: 0;
   margin: 0;
 
-  @media screen and (max-width: 980px) {
-    // flex-wrap: wrap;
-  }
-
   li {
     position: relative;
+    padding: 6px 0;
     z-index: 1;
 
     &:first-child {
-      margin-left: 0;
+      margin-right: 15px;
     }
 
     &:last-child {
       margin-right: 0;
     }
 
+    a {
+      color: #fffcf8;
+      transition-duration: 0.2s;
+      background-color: $color-primary-light3;
+      border-radius: 5px;
+      letter-spacing: 0.5px;
+      width: fit-content;
+      padding: 0 6px;
+
+      @media screen and (max-width: 980px) {
+        margin: 3px 0;
+        font-size: 1.3rem;
+      }
+    }
+
     &:hover {
       & > a {
-        color: $color-primary;
-        transition-duration: 0.4s;
+        color: $color-secondary-dark1;
       }
 
       > .navSubMenu {
@@ -264,11 +281,11 @@
     display: block;
     text-decoration: none;
     color: $color-black-800;
-    font-size: 1rem;
-    padding: 0.5em;
+    font-size: 1.1rem;
+    padding: 0.02rem 0.3em;
 
     @media screen and (max-width: 980px) {
-      font-size: 1.2rem;
+      padding: 0.15em;
     }
 
     @media (hover: hover) {

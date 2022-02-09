@@ -189,7 +189,12 @@ const Nav = ({ procentScroll }) => {
   return (
     <>
       {size.width <= 980 && (
-        <Menu itemListElement="div" className={styles.burgerMenu} disableAutoFocus right>
+        <Menu itemListElement="nav" disableAutoFocus right>
+          <Link href="/">
+            <a aria-label="Logo">
+              <Logo />
+            </a>
+          </Link>
           <div
             className={searchVisibility === SEARCH_HIDDEN ? `${styles.navSearchHidden}` : `${styles.navSearchVisible}`}
           >
@@ -263,7 +268,7 @@ const Nav = ({ procentScroll }) => {
                 {searchVisibility === SEARCH_HIDDEN && (
                   <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
                     <span className="sr-only">Toggle Search</span>
-                    <FaSearch />
+                    <FaSearch size={25} />
                   </button>
                 )}
                 {searchVisibility === SEARCH_VISIBLE && (
