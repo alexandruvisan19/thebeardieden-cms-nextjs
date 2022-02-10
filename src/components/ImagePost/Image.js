@@ -11,7 +11,7 @@ const ImagePost = ({
   src,
   altText,
   srcSet,
-  sizes,
+  sizes = '(min-width: 980px) 100vw',
   dangerouslySetInnerHTML,
   sticky,
 }) => {
@@ -27,12 +27,20 @@ const ImagePost = ({
             src={src}
             alt={altText || ''}
             srcSet={srcSet}
-            sizes={sizes}
             priority="true"
             loading="eager"
+            layout="intrinsic"
           />
         ) : (
-          <Image width={width} height={height} src={src} alt={altText || ''} srcSet={srcSet} sizes={sizes} />
+          <Image
+            width={width}
+            height={height}
+            src={src}
+            alt={altText || ''}
+            srcSet={srcSet}
+            layout="intrinsic"
+            priority="true"
+          />
         )}
       </div>
       {children && <figcaption>{children}</figcaption>}
