@@ -26,7 +26,6 @@ const ImagePost = ({
             src={src}
             alt={altText || ''}
             srcSet={srcSet}
-            priority="true"
             loading="eager"
             layout="intrinsic"
           />
@@ -38,7 +37,7 @@ const ImagePost = ({
             alt={altText || ''}
             srcSet={srcSet}
             layout="intrinsic"
-            priority="true"
+            loading="eager"
           />
         )}
       </div>
