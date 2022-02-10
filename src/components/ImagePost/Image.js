@@ -11,7 +11,6 @@ const ImagePost = ({
   src,
   altText,
   srcSet,
-  sizes = '(min-width: 980px) 100vw',
   dangerouslySetInnerHTML,
   sticky,
 }) => {
