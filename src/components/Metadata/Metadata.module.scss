@@ -66,9 +66,9 @@
   }
 
   a {
-    color: $color-black-800;
+    color: #fff;
     font-size: 0.55rem;
-    background-color: $color-primary;
+    background-color: $color-secondary;
     text-transform: uppercase;
     font-weight: 600;
     padding: 5px;
@@ -81,8 +81,8 @@
     &:hover {
       color: #fff;
       text-decoration: none !important;
-      background-color: $color-primary-light3;
-      transition-duration: 0.3s;
+      background-color: $color-secondary-light3;
+      transition-duration: 0.2s;
       box-shadow: $box-shadow-medium;
     }
 

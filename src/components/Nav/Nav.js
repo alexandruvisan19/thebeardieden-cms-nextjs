@@ -188,7 +188,7 @@ const Nav = ({ procentScroll }) => {
 
   return (
     <>
-      {size.width <= 980 && (
+      {size.width <= 880 && (
         <Menu itemListElement="nav" disableAutoFocus right>
           <Link href="/">
             <a aria-label="Logo">
@@ -231,9 +231,19 @@ const Nav = ({ procentScroll }) => {
             </form>
           </div>
           <ul id="page-wrap" className={styles.navMenu}>
-            <li key="cat">
-              <Link href="/categories/">
-                <a>Categories</a>
+            <li key="cat1">
+              <Link href="/categories/bearded-dragon-enclosure/">
+                <a>Enclosure</a>
+              </Link>
+            </li>
+            <li key="cat2">
+              <Link href="/categories/bearded-dragon-supplies/">
+                <a>Products</a>
+              </Link>
+            </li>
+            <li key="cat3">
+              <Link href="/categories/bearded-dragon-food/">
+                <a>Food</a>
               </Link>
             </li>
             {navigation?.map((listItem) => {
@@ -251,13 +261,21 @@ const Nav = ({ procentScroll }) => {
               </a>
             </Link>
           </p>
-          {size.width > 980 && (
+          {size.width > 880 && (
             <ul id="page-wrap" className={styles.navMenu}>
-              <li key="cat">
-                <Link href="/categories/">
-                  <a>
-                    <strong>Categories</strong>
-                  </a>
+              <li key="cat1">
+                <Link href="/categories/bearded-dragon-enclosure/">
+                  <a>Enclosure</a>
+                </Link>
+              </li>
+              <li key="cat2">
+                <Link href="/categories/bearded-dragon-supplies/">
+                  <a>Products</a>
+                </Link>
+              </li>
+              <li key="cat3">
+                <Link href="/categories/bearded-dragon-food/">
+                  <a>Food</a>
                 </Link>
               </li>
               <li
