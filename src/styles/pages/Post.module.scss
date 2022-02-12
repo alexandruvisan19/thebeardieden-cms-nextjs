@@ -50,7 +50,7 @@
       transition-duration: 0.2s;
 
       &:hover {
-        color: $color-primary;
+        color: $color-secondary;
       }
     }
   }
@@ -85,7 +85,7 @@
   background-color: #fff;
   border-radius: 15px;
   @media screen and (max-width: 980px) {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     margin-right: 0;
   }
 
@@ -97,7 +97,7 @@
     position: relative;
 
     &:hover {
-      color: $color-primary-light2;
+      color: $color-secondary-light2;
       text-decoration: none;
     }
   }
@@ -145,7 +145,8 @@
   [class~="wp-block-image"] {
     img {
       height: auto;
-      border-radius: 8px;
+      border-radius: 14px;
+      box-shadow: $box-shadow-small;
     }
 
     figure {
@@ -165,12 +166,16 @@
     margin: 45px 0 40px 0;
     display: flex;
     border: 1px solid $border-gray-050;
-    padding: 25px 20px 25px 20px !important;
+    padding: 20px 20px 15px 20px !important;
     border-radius: 10px;
     position: relative;
     box-shadow: $box-shadow-small;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 980px) {
+      padding: 10px 15px 10px 15px !important;
+    }
 
     &:hover {
       box-shadow: $box-shadow-medium;
@@ -211,11 +216,8 @@
     }
 
     [class~="product-text"] {
-      margin-bottom: 1.5rem !important;
-      margin-top: 1rem !important;
-
       a {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         color: $color-black-899;
         text-decoration: none;
         line-height: 1.2;
@@ -230,7 +232,7 @@
       border-bottom: 4px solid $color-button-border-amazon;
       background-color: $color-button-amazon;
       border-radius: 7px;
-      padding: 8px 50px;
+      padding: 4px 25px;
       display: inline-block;
 
       a {
@@ -276,7 +278,7 @@
 
     [class~="affiliate-text"] {
       font-style: italic;
-      font-size: 0.9rem;
+      font-size: 14px;
       color: $color-gray-850;
       position: relative;
       top: 15px;
@@ -338,6 +340,7 @@
 }
 
 .postMetadata {
+  margin-top: 0.5rem;
   text-align: center;
   justify-content: center;
   align-items: baseline;
