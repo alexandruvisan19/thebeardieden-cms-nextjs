@@ -6,9 +6,7 @@ import styles from './Category.module.scss';
 const Category = ({ categories, title, color }) => {
   return (
     <>
-      <SectionTitle>
-        <h2>{title} 📚</h2>
-      </SectionTitle>
+      <SectionTitle>{title} 📚</SectionTitle>
       <div className={styles.categories}>
         {categories
           .sort((a, b) => b.count - a.count)
